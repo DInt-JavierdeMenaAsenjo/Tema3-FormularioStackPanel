@@ -7,40 +7,56 @@
         mc:Ignorable="d"
         Icon="assets/forms.ico"
         Title="MainWindow" Height="450" Width="800" MinWidth="400">
-    <StackPanel>
-        <StackPanel Margin="20" Height="65">
-            <StackPanel.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF70D3CA" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </StackPanel.Background>
-            <TextBlock Text="Nombre" FontSize="16" FontWeight="Bold" Margin="10,5"/>
-            <TextBox Margin="10,0"/>
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="10,5"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="10,0"/>
+        </Style>
+        <Style TargetType="{x:Type StackPanel}">
+            <Setter Property="Margin" Value="20"/>
+            <Setter Property="Height" Value="65"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF70D3CA" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type StackPanel}" x:Key="Botones">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Margin" Value="20"/>
+        </Style>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    
+    <StackPanel Background="White" Margin="0" Height="400">
+        <StackPanel>
+            <TextBlock Text="Nombre"/>
+            <TextBox/>
         </StackPanel>
-        <StackPanel Margin="20" Height="65">
-            <StackPanel.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF70D3CA" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </StackPanel.Background>
-            <TextBlock Text="Dirección" FontSize="16" FontWeight="Bold" Margin="10,5"/>
-            <TextBox Margin="10,0" />
+        <StackPanel>
+            <TextBlock Text="Dirección"/>
+            <TextBox/>
         </StackPanel>
-        <StackPanel Margin="20" Height="65">
-            <StackPanel.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF70D3CA" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </StackPanel.Background>
-            <TextBlock Text="Correo electrónico" FontSize="16" FontWeight="Bold" Margin="10,5"/>
-            <TextBox Margin="10,0,0,0" HorizontalAlignment="Left" Width="615" />
-        </StackPanel >
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20">
-            <Button Content="Aceptar" Width="100" Margin="5"/>
-            <Button Content="Cancelar" Width="100" Margin="5"/>
+        <StackPanel>
+            <TextBlock Text="Correo electrónico"/>
+            <TextBox HorizontalAlignment="Left" Width="615" />
+        </StackPanel>
+        <StackPanel Style="{StaticResource Botones}">
+            <Button Content="Aceptar"/>
+            <Button Content="Cancelar"/>
         </StackPanel>
     </StackPanel>
 </Window>
