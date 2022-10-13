@@ -16,7 +16,7 @@
         <Style TargetType="{x:Type TextBox}">
             <Setter Property="Margin" Value="10,0"/>
         </Style>
-        <Style TargetType="{x:Type StackPanel}">
+        <Style TargetType="{x:Type StackPanel}" x:Key="Panels">
             <Setter Property="Margin" Value="20"/>
             <Setter Property="Height" Value="65"/>
             <Setter Property="Background">
@@ -41,16 +41,16 @@
         </Style>
     </Window.Resources>
     
-    <StackPanel Background="White" Margin="0" Height="400">
-        <StackPanel>
+    <StackPanel>
+        <StackPanel Style="{StaticResource Panels}">
             <TextBlock Text="Nombre"/>
             <TextBox/>
         </StackPanel>
-        <StackPanel>
+        <StackPanel Style="{StaticResource Panels}">
             <TextBlock Text="Dirección"/>
             <TextBox/>
         </StackPanel>
-        <StackPanel>
+        <StackPanel Style="{StaticResource Panels}">
             <TextBlock Text="Correo electrónico"/>
             <TextBox HorizontalAlignment="Left" Width="615" />
         </StackPanel>
